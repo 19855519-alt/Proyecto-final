@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a92824">
+  <meta name="description" content="Pupusas 3x1: pupusas salvadoreñas con sabor casero, promociones y mucho queso.">
+  <title>Pupusas 3x1 | Sabor salvadoreño</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="topbar">
+    <div data-i18n="topbar">¡Sabor salvadoreño en cada pupusa! <span>Hechas con cariño 🇸🇻</span></div>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#inicio">
+      <span class="brand-icon">3x1</span>
+      <span>PUPUSAS <strong>3X1</strong><small>EL AUTÉNTICO SABOR</small></span>
+    </a>
+
+    <div class="header-actions">
+      <button class="header-control" id="themeToggle" type="button" aria-pressed="false"></button>
+      <button class="header-control" id="languageToggle" type="button"></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio" data-i18n="navHome">Inicio</a>
+      <a href="#menu" data-i18n="navMenu">Menú</a>
+      <a href="#promociones" data-i18n="navPromos">Promociones</a>
+      <a href="#nosotros" data-i18n="navAbout">Nosotros</a>
+      <a href="#contacto" class="nav-button" data-i18n="navContact">Contáctenos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow"><span class="dot"></span><span data-i18n="heroEyebrow">ORGULLO SALVADOREÑO</span></span>
+        <h1 data-i18n="heroTitle">El sabor que<br>siempre <span>se antoja.</span></h1>
+        <p data-i18n="heroDescription">Pupusas calientitas, deliciosas y preparadas para compartir. ¡Porque una nunca es suficiente!</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary" data-i18n="heroMenu">Ver nuestro menú ↗</a>
+          <a href="#contacto" class="btn btn-outline" data-i18n="heroContact">Hacé tu consulta</a>
+        </div>
+        <div class="hero-note">
+          <span class="note-icon">♡</span>
+          <span><strong data-i18n="heroNoteTitle">Tradición en cada bocado</strong><small data-i18n="heroNoteText">El sabor de nuestra tierra</small></span>
+        </div>
+      </div>
+
+      <div class="hero-photo photo-frame">
+        <img src="imgs/ini.jpg" alt="Pupusas recién preparadas" data-i18n-alt="altPupusas" onerror="this.style.display='none'">
+        <div class="image-fallback"><span>📸</span><strong data-i18n="heroPhotoTitle">Tu foto principal</strong><small data-i18n="heroPhotoText">Agregá aquí una foto de tus pupusas</small></div>
+        <div class="photo-sticker" data-i18n="photoSticker">¡Qué<br>rico! <span>♥</span></div>
+      </div>
+      <span class="hero-decoration decoration-one">✳</span>
+      <span class="hero-decoration decoration-two">✳</span>
+    </section>
+
+    <section class="featured-carousel" aria-label="Carrusel de pupusas">
+      <div class="featured-carousel-heading">
+        <span class="eyebrow" data-i18n="carouselEyebrow">NUESTRAS PUPUSAS</span>
+        <h2 data-i18n="carouselTitle">Conocé nuestros <span>sabores</span></h2>
+      </div>
+      <div class="carousel-frame">
+        <div class="carousel-track" id="menuCarousel" role="region" aria-roledescription="carousel" aria-label="Carrusel de pupusas" tabindex="0">
+          <article class="carousel-slide">
+            <img src="imgs/queso.webp" alt="Pupusa de queso" data-i18n-alt="altCheese" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodCheese">Queso</h3></div>
+          </article>
+          <article class="carousel-slide">
+            <img src="imgs/re.webp" alt="Pupusa revuelta" data-i18n-alt="altMixed" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodMixed">Revuelta</h3></div>
+          </article>
+          <article class="carousel-slide">
+            <img src="imgs/fcq.webp" alt="Pupusa de frijol con queso" data-i18n-alt="altBeanCheese" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodBeanCheese">Frijol con queso</h3></div>
+          </article>
+          <article class="carousel-slide">
+            <img src="imgs/chi.webp" alt="Pupusa de chicharrón" data-i18n-alt="altPork" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodPork">Chicharrón</h3></div>
+          </article>
+          <article class="carousel-slide">
+            <img src="imgs/loro.webp" alt="Pupusa de queso con loroco" data-i18n-alt="altLoroco" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodLoroco">Queso con loroco</h3></div>
+          </article>
+          <article class="carousel-slide">
+            <img src="imgs/ayot.webp" alt="Pupusa de ayote con queso" data-i18n-alt="altSquash" onerror="this.style.display='none'">
+            <div class="carousel-caption"><span data-i18n="carouselItem">Pupusa</span><h3 data-i18n="foodSquash">Ayote con queso</h3></div>
+          </article>
+        </div>
+        <button class="carousel-arrow carousel-previous" id="carouselPrevious" type="button" aria-label="Pupusa anterior">←</button>
+        <button class="carousel-arrow carousel-next" id="carouselNext" type="button" aria-label="Siguiente pupusa">→</button>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-dots" id="carouselDots" aria-label="Elegir pupusa">
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 1" aria-current="true"></button>
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 2"></button>
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 3"></button>
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 4"></button>
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 5"></button>
+          <button class="carousel-dot" type="button" aria-label="Ir a pupusa 6"></button>
+        </div>
+      </div>
+      <span class="carousel-status" id="carouselStatus" aria-live="polite"></span>
+    </section>
+
+    <section class="benefits">
+      <div><span>🌽</span><p><strong data-i18n="benefitTradition">Tradición</strong><small data-i18n="benefitTraditionText">Sabor salvadoreño</small></p></div>
+      <div><span>🫓</span><p><strong data-i18n="benefitFlavor">Buen sabor</strong><small data-i18n="benefitFlavorText">Para disfrutar</small></p></div>
+      <div><span>❤️</span><p><strong data-i18n="benefitCare">Hechas con cariño</strong><small data-i18n="benefitCareText">Para compartir</small></p></div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow" data-i18n="menuEyebrow">DE NUESTRA COCINA</span>
+          <h2 data-i18n="menuTitle">Un menú para <span>antojarte</span></h2>
+          <p data-i18n="menuDescription">Elegí tu favorita y disfrutá del sabor de El Salvador.</p>
+        </div>
+        <span class="menu-stamp" data-i18n="menuStamp">Hecho con<br>amor ♡</span>
+      </div>
+
+      <div class="menu-grid">
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/queso.webp" alt="Pupusa de queso" data-i18n-alt="altCheese" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackCheese">📸 Foto de pupusa de queso</span>
+            <span class="food-tag" data-i18n="favorite">Favorita</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodCheese">Queso</h3><p data-i18n="foodCheeseText">Quesito derretido en cada bocado.</p></div><strong class="price">$0.75</strong></div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/re.webp" alt="Pupusa revuelta" data-i18n-alt="altMixed" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackMixed">📸 Foto de pupusa revuelta</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodMixed">Revuelta</h3><p data-i18n="foodMixedText">Una mezcla clásica y deliciosa.</p></div><strong class="price">$0.75</strong></div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/fcq.webp" alt="Pupusa de frijol con queso" data-i18n-alt="altBeanCheese" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackBeanCheese">📸 Foto de frijol con queso</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodBeanCheese">Frijol con queso</h3><p data-i18n="foodBeanCheeseText">La combinación que nunca falla.</p></div><strong class="price">$0.75</strong></div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/chi.webp" alt="Pupusa de chicharrón" data-i18n-alt="altPork" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackPork">📸 Foto de pupusa de chicharrón</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodPork">Chicharrón</h3><p data-i18n="foodPorkText">Para quienes aman el sabor tradicional.</p></div><strong class="price">$0.75</strong></div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/loro.webp" alt="Pupusa de queso con loroco" data-i18n-alt="altLoroco" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackLoroco">📸 Foto de queso con loroco</span>
+            <span class="food-tag green-tag" data-i18n="special">Especial</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodLoroco">Queso con loroco</h3><p data-i18n="foodLorocoText">Un toque aromático y especial.</p></div><strong class="price">$1.00</strong></div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-image">
+            <img src="imgs/ayot.webp" alt="Pupusa de ayote con queso" data-i18n-alt="altSquash" onerror="this.style.display='none'">
+            <span class="image-fallback" data-i18n="fallbackSquash">📸 Foto de pupusa de ayote</span>
+          </div>
+          <div class="food-info"><div><h3 data-i18n="foodSquash">Ayote con queso</h3><p data-i18n="foodSquashText">Una opción diferente y sabrosa.</p></div><strong class="price">$0.85</strong></div>
+        </article>
+      </div>
+      <p class="price-note" data-i18n="priceNote">Precios de ejemplo: actualizalos según los precios reales de tu emprendimiento.</p>
+    </section>
+
+    <section class="promo-section" id="promociones">
+      <div class="promo-copy">
+        <span class="eyebrow light-eyebrow" data-i18n="promoEyebrow">¡UNA PROMO PARA COMPARTIR!</span>
+        <h2 data-i18n="promoTitle">¡Tres pupusas<br>por solo <span>$2.00!</span></h2>
+        <p data-i18n="promoDescription">Reuní a tus amigos o a tu familia y disfrutá de una buena pupuseada.</p>
+        <a href="#contacto" class="btn btn-yellow" data-i18n="promoButton">Quiero más información ↗</a>
+        <small data-i18n="promoNote">*Promoción de ejemplo. Confirmá su disponibilidad antes de publicarla.</small>
+      </div>
+      <div class="promo-photo photo-frame">
+        <img src="imgs/combo.webp" alt="Combo de pupusas" data-i18n-alt="altCombo" onerror="this.style.display='none'">
+        <div class="image-fallback"><span>📸</span><strong data-i18n="promoPhotoTitle">Foto de la promoción</strong><small data-i18n="promoPhotoText">Colocá aquí tu combo de pupusas</small></div>
+        <span class="promo-burst" data-i18n="promoBurst">BUEN<br>SABOR<br>♥</span>
+      </div>
+    </section>
+
+    <section class="section about-section" id="nosotros">
+      <div class="about-photo photo-frame">
+        <img src="imgs/pupusasayo.jpgk" alt="Preparación de pupusas" data-i18n-alt="altPreparation" onerror="this.style.display='none'">
+        <div class="image-fallback"><span>📸</span><strong data-i18n="aboutPhotoTitle">Foto de tu emprendimiento</strong><small data-i18n="aboutPhotoText">Tu cocina o tus pupusas</small></div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow" data-i18n="aboutEyebrow">SOMOS PUPUSAS 3X1</span>
+        <h2 data-i18n="aboutTitle">Lo nuestro es el<br><span>auténtico sabor.</span></h2>
+        <p data-i18n="aboutText">En Pupusas 3x1 queremos compartir uno de los sabores más queridos de El Salvador. Nuestro objetivo es ofrecer una experiencia rica, cercana y accesible para quienes disfrutan de unas buenas pupusas.</p>
+        <p data-i18n="aboutThanks">Gracias por apoyar nuestro emprendimiento. ¡Esperamos que cada visita te deje con ganas de volver!</p>
+        <a href="#contacto" class="text-link" data-i18n="aboutLink">Conocé más y escribinos ↗</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="contact-copy">
+        <span class="eyebrow light-eyebrow" data-i18n="contactEyebrow">ESTAMOS PARA AYUDARTE</span>
+        <h2 data-i18n="contactTitle">¿Hablamos de<br><span>pupusas?</span></h2>
+        <p data-i18n="contactDescription">Dejanos tu consulta y nos pondremos en contacto. También podés escribirnos para preguntar por el menú o las promociones.</p>
+        <div class="contact-detail"><span>💬</span><div><strong data-i18n="contactLabel">Contacto</strong><small data-i18n="contactHint">Enviá tu mensaje desde el formulario.</small></div></div>
+        <div class="contact-detail"><span>📍</span><div><strong data-i18n="country">El Salvador</strong><small data-i18n="countryNote">El sabor de nuestra tierra.</small></div></div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h3 data-i18n="formTitle">Escribinos</h3>
+        <p data-i18n="formDescription">Completá los datos para enviar tu mensaje.</p>
+        <label for="nombre" data-i18n="nameLabel">Tu nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="¿Cómo te llamás?" data-i18n-placeholder="namePlaceholder" required maxlength="80">
+
+        <label for="correo" data-i18n="emailLabel">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" placeholder="tunombre@correo.com" data-i18n-placeholder="emailPlaceholder" required maxlength="120">
+
+        <label for="motivo" data-i18n="reasonLabel">Motivo de tu mensaje</label>
+        <select id="motivo" name="motivo" required>
+          <option value="" data-i18n="reasonPlaceholder">Seleccioná una opción</option>
+          <option data-i18n="reasonMenu">Consulta sobre el menú</option>
+          <option data-i18n="reasonPromos">Pregunta sobre promociones</option>
+          <option data-i18n="reasonInfo">Pedido de información</option>
+          <option data-i18n="reasonOther">Otro</option>
+        </select>
+
+        <label for="mensaje" data-i18n="messageLabel">Tu mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribí tu consulta aquí..." data-i18n-placeholder="messagePlaceholder" required maxlength="1500"></textarea>
+
+        <button type="submit" class="btn btn-primary submit-button" id="submitButton" data-i18n="submitButton">Enviar mensaje ↗</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <small class="privacy-note" data-i18n="privacyNote">Tus datos se usan para responder a tu consulta.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-icon">3x1</span><span>PUPUSAS <strong>3X1</strong><small>EL AUTÉNTICO SABOR</small></span></a>
+    <p data-i18n="footerText">Hecho con cariño y sabor salvadoreño 🇸🇻</p>
+    <div class="footer-links"><a href="#inicio" data-i18n="navHome">Inicio</a><a href="#menu" data-i18n="navMenu">Menú</a><a href="#contacto" data-i18n="contactLabel">Contacto</a></div>
+    <small data-i18n="copyright">© <span id="year"></span> Pupusas 3x1. Todos los derechos reservados.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
