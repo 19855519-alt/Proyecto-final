@@ -272,13 +272,18 @@ languageToggle.addEventListener("click", () => {
   applyTranslations();
 });
 
+
+const webhook_discord = "PEGA_AQUI_TU_WEBHOOK_DE_DISCORD";
+
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   formStatus.textContent = "";
   formStatus.className = "form-status";
+
   submitButton.disabled = true;
-  submitButton.textContent = translations[currentLanguage].sending;
+  submitButton.textContent =
+    translations[currentLanguage].sending;
 
   const datos = {
     nombre: document.getElementById("nombre").value.trim(),
@@ -288,27 +293,78 @@ contactForm.addEventListener("submit", async (event) => {
   };
 
   try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(datos)
-    });
-
-    const resultado = await response.json();
-
-    if (!response.ok) {
-      throw new Error(resultado.error || "No se pudo enviar el mensaje.");
+    if (
+      !datos.nombre ||
+      !datos.correo ||
+      !datos.motivo ||
+      !datos.mensaje
+    ) {
+      throw new Error("Completa todos los campos.");
     }
 
-    formStatus.textContent = translations[currentLanguage].sent;
+    const mensajeDiscord = {
+      username: "Pupusas 3x1",
+      embeds: [
+        {
+          title: "📩 Nuevo mensaje de contacto",
+          color: 16753920,
+          fields: [
+            {
+              name: "👤 Nombre",
+              value: datos.nombre.slice(0, 200)
+            },
+            {
+              name: "📧 Correo",
+              value: datos.correo.slice(0, 200)
+            },
+            {
+              name: "📌 Motivo",
+              value: datos.motivo.slice(0, 200)
+            },
+            {
+              name: "💬 Mensaje",
+              value: datos.mensaje.slice(0, 3000)
+            }
+          ],
+          footer: {
+            text: "Formulario web de Pupusas 3x1"
+          },
+          timestamp: new Date().toISOString()
+        }
+      ]
+    };
+
+    const response = await fetch(webhook_discord, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(mensajeDiscord)
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo enviar el mensaje a Discord.");
+    }
+
+    formStatus.textContent =
+      translations[currentLanguage].sent;
+
     formStatus.classList.add("success");
     contactForm.reset();
+
   } catch (error) {
+    console.error("Error al enviar:", error);
+
     formStatus.textContent =
       error.message || translations[currentLanguage].sendError;
+
     formStatus.classList.add("error");
+
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = translations[currentLanguage].send;
+
+    submitButton.textContent =
+      translations[currentLanguage].send;
   }
 });
+
